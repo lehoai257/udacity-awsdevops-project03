@@ -143,11 +143,11 @@ jobs:
             echo $(aws ec2 describe-instances \
             --query 'Reservations[*].Instances[*].PublicIpAddress' \
             --filters Name=tag:aws:cloudformation:stack-name,Values=udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7} \
-            --output text) >> ~/udacity-awsdevops-project03/.circleci/ansible/inventory.txt
+            --output text) >> ~/project/.circleci/ansible/inventory.txt
       - persist_to_workspace:
           root: ~/
           paths:
-            - udacity-awsdevops-project03/.circleci/ansible/inventory.txt
+            - project/.circleci/ansible/inventory.txt
       - destroy-environment:
           workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
 
