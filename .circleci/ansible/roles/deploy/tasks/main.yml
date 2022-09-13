@@ -32,7 +32,7 @@
 - name: "copy backend compressed file."
   become: true
   copy:
-    src: /home/circleci/project/artifact.tar.gz
+    src: /home/project/artifact.tar.gz
     dest: /home/ubuntu/backend/
 
 - name: "extract the zipped artifact into the EC2 instance."
