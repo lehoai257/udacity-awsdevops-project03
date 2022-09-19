@@ -365,7 +365,7 @@ jobs:
       - run:
           name: Update cloudfront distribution
           command: |
-            OldWorkflowID=$(aws cloudformation list-exports --query "Exports[?Name=='WorkflowID'].Value" --output text)
+            export OldWorkflowID=$(aws cloudformation list-exports --query "Exports[?Name=='WorkflowID'].Value" --output text)
             curl --insecure https://kvdb.io/VtT2bzgtigbZfYi8gJpHQx/OldWorkflowID -d "${OldWorkflowID}"
 
             aws cloudformation deploy \
