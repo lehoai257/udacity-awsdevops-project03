@@ -387,7 +387,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Remove old stacks and files
+          name: Remove old stacks and files.
           command: |
             export OldWorkflowID=$(curl --insecure https://kvdb.io/VtT2bzgtigbZfYi8gJpHQx/OldWorkflowID)
             echo OldWorkflowID $OldWorkflowID
